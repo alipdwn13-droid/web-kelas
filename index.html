@@ -69,7 +69,6 @@
                 regName: '',
                 regEmail: '',
                 regPassword: '',
-                regRole: 'Siswa',
                 isAuthLoading: false,
 
                 // Password Admin Pengurus Kelas
@@ -131,13 +130,12 @@
                     window.handleGoogleCredentialResponse = (response) => {
                         const googleUser = parseJwt(response.credential);
                         if (googleUser) {
-                            // Deteksi Email Khusus Pembuat Web
                             const isDeveloper = (googleUser.email.toLowerCase() === 'alipdwn13@gmail.com');
 
                             this.userProfile = {
                                 name: googleUser.name,
                                 email: googleUser.email,
-                                role: isDeveloper ? 'Pembuat Web & Pengurus' : 'Siswa',
+                                role: isDeveloper ? 'Pembuat Web & Pengurus' : '',
                                 avatar: googleUser.picture
                             };
                             this.isLoggedIn = true;
@@ -189,7 +187,7 @@
                         this.userProfile = {
                             name: nameFromEmail,
                             email: this.loginEmail,
-                            role: isDeveloper ? 'Pembuat Web & Pengurus' : 'Siswa',
+                            role: isDeveloper ? 'Pembuat Web & Pengurus' : '',
                             avatar: `https://ui-avatars.com/api/?name=${nameFromEmail}&background=6366f1&color=fff`
                         };
                         this.isLoggedIn = true;
@@ -207,7 +205,7 @@
                         this.userProfile = {
                             name: this.regName,
                             email: this.regEmail,
-                            role: isDeveloper ? 'Pembuat Web & Pengurus' : this.regRole,
+                            role: isDeveloper ? 'Pembuat Web & Pengurus' : '',
                             avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(this.regName)}&background=6366f1&color=fff`
                         };
                         this.isLoggedIn = true;
@@ -281,7 +279,7 @@
                         time: this.newTime,
                         title: this.newTitle,
                         desc: this.newDesc,
-                        author: this.userProfile.role.includes('Pembuat Web') ? 'Pembuat Web' : this.newAuthor,
+                        author: this.userProfile.role && this.userProfile.role.includes('Pembuat Web') ? 'Pembuat Web' : this.newAuthor,
                         status: this.newStatus,
                         statusColor: isGold ? 'text-amber-400' : 'text-indigo-400'
                     });
@@ -424,15 +422,14 @@
                             <div class="text-[10px] text-slate-400" x-text="currentDate">-</div>
                         </div>
 
-                        <!-- Profil User dengan Badge Pembuat Web -->
+                        <!-- Profil User (Hanya Tampilkan Badge Khusus untuk Pembuat Web) -->
                         <div class="flex items-center gap-2.5 bg-slate-900 border border-slate-800 p-1.5 pr-2.5 rounded-xl">
                             <img :src="userProfile.avatar" class="w-8 h-8 rounded-lg object-cover">
                             <div class="text-left pr-1">
                                 <p class="text-xs font-bold text-white leading-none max-w-[120px] truncate" x-text="userProfile.name"></p>
-                                <p class="text-[10px] font-semibold leading-none mt-1" 
-                                   :class="userProfile.role.includes('Pembuat Web') ? 'text-amber-400 font-bold' : 'text-indigo-400'" 
-                                   x-text="userProfile.role">
-                                </p>
+                                <template x-if="userProfile.role && userProfile.role.includes('Pembuat Web')">
+                                    <p class="text-[10px] font-bold leading-none mt-1 text-amber-400" x-text="userProfile.role"></p>
+                                </template>
                             </div>
                             <button @click="logout()" class="text-slate-500 hover:text-rose-400 px-1 text-xs transition" title="Keluar">
                                 <i class="fa-solid fa-power-off"></i>
