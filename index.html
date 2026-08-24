@@ -62,7 +62,7 @@
                 isLoggedIn: false,
                 userProfile: { name: '', email: '', role: '', avatar: '' },
 
-                // State Form Login / Register Screen
+                // State Form Login / Register Manual
                 authMode: 'login',
                 loginEmail: '',
                 loginPassword: '',
@@ -127,7 +127,7 @@
                         this.isLoggedIn = true;
                     }
 
-                    // Inisialisasi Google Auth SDK
+                    // Callback saat login Google Berhasil
                     window.handleGoogleCredentialResponse = (response) => {
                         const googleUser = parseJwt(response.credential);
                         if (googleUser) {
@@ -142,12 +142,12 @@
                         }
                     };
 
-                    // Tunggu library Google termuat sempurna
+                    // Inisialisasi Google Auth SDK dengan Client ID kamu
                     const checkGsi = setInterval(() => {
                         if (typeof google !== 'undefined' && google.accounts) {
                             clearInterval(checkGsi);
                             google.accounts.id.initialize({
-                                client_id: 'GANTI_DENGAN_CLIENT_ID_GOOGLE_KAMU',
+                                client_id: '860718785165-hi74almmqmr0tald91gboitrssk5bi4r.apps.googleusercontent.com',
                                 callback: window.handleGoogleCredentialResponse
                             });
                             google.accounts.id.renderButton(
@@ -413,7 +413,7 @@
                             <div class="text-[10px] text-slate-400" x-text="currentDate">-</div>
                         </div>
 
-                        <!-- Menampilkan Profile User & Foto dari Akun Google -->
+                        <!-- Profil User dari Google/Manual -->
                         <div class="flex items-center gap-2.5 bg-slate-900 border border-slate-800 p-1.5 pr-2.5 rounded-xl">
                             <img :src="userProfile.avatar" class="w-8 h-8 rounded-lg object-cover">
                             <div class="text-left pr-1">
@@ -736,7 +736,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div class="card-premium rounded-2xl overflow-hidden group">
                         <div class="relative overflow-hidden aspect-video">
-                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/foto1.jpg" alt="Foto Utama" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"[cite: 1]>
+                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/foto1.jpg" alt="Foto Utama" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <div class="p-4">
                             <h4 class="font-bold text-sm text-white">Foto Kebersamaan 7E</h4>
@@ -746,7 +746,7 @@
 
                     <div class="card-premium rounded-2xl overflow-hidden group">
                         <div class="relative overflow-hidden aspect-video">
-                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/WhatsApp%20Image%202026-08-24%20at%2018.05.44%20(1).jpeg" alt="Belajar Kelompok" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"[cite: 1]>
+                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/WhatsApp%20Image%202026-08-24%20at%2018.05.44%20(1).jpeg" alt="Belajar Kelompok" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <div class="p-4">
                             <h4 class="font-bold text-sm text-white">Foto Kebersamaan 7E</h4>
@@ -756,7 +756,7 @@
 
                     <div class="card-premium rounded-2xl overflow-hidden group">
                         <div class="relative overflow-hidden aspect-video">
-                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/WhatsApp%20Image%202026-08-24%20at%2018.05.44.jpeg" alt="Jam Istirahat" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"[cite: 1]>
+                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/WhatsApp%20Image%202026-08-24%20at%2018.05.44.jpeg" alt="Jam Istirahat" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <div class="p-4">
                             <h4 class="font-bold text-sm text-white">Foto Kebersamaan 7E</h4>
