@@ -1,169 +1,882 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mulya Sound System | Professional Audio & Rental</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Kelas 7E — SMP Negeri 1 Cisaga</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- SDK Resmi Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="bg-amber-500 text-slate-950 p-2.5 rounded-xl font-black text-xl shadow-lg shadow-amber-500/20">
-                    <i class="fa-solid fa-volume-high"></i>
-                </div>
-                <div>
-                    <span class="text-xl font-bold tracking-wider text-white">MULYA <span class="text-amber-500">SOUND SYSTEM</span></span>
-                    <p class="text-xs text-slate-400">Professional Audio Production</p>
-                </div>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#beranda" class="hover:text-amber-400 transition">Beranda</a>
-                <a href="#layanan" class="hover:text-amber-400 transition">Layanan & Spek</a>
-                <a href="#galeri" class="hover:text-amber-400 transition">Galeri Setup</a>
-                <a href="#kontak" class="hover:text-amber-400 transition">Kontak</a>
-            </nav>
-            <div>
-                <a href="#kontak" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-2.5 rounded-xl font-semibold text-sm transition shadow-lg shadow-amber-500/20">
-                    <i class="fa-brands fa-whatsapp mr-1.5"></i> Sewa Sekarang
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="beranda" class="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-block bg-amber-500/10 text-amber-400 text-xs font-bold px-3.5 py-1.5 rounded-full border border-amber-500/20 mb-6 uppercase tracking-wider">
-                <i class="fa-solid fa-fire mr-1"></i> Hantaman Bass Mantap & Jernih
-            </span>
-            <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-                Solusi Audio Lapangan Terbaik untuk <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Setiap Acara Anda</span>
-            </h1>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">
-                Melayani penyewaan sound system profesional, hajatan, konser, hingga cek sound horeg dengan dukungan perangkat rakitan berkualitas tinggi dan driver pilihan.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#layanan" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition shadow-lg shadow-amber-500/20">
-                    Lihat Spesifikasi Perangkat
-                </a>
-                <a href="#galeri" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold px-8 py-3.5 rounded-xl transition">
-                    Lihat Galeri Setup
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Layanan & Spesifikasi -->
-    <section id="layanan" class="py-20 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-3">Spesifikasi & Layanan Unggulan</h2>
-                <p class="text-slate-400">Didukung komponen power amplifier bertenaga tinggi dan box speaker kustom.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-amber-500/50 transition">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-compact-disc"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Subwoofer & Low</h3>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Mengandalkan desain box miniscoop dan CBS Nogosari berpadu driver 18 inci untuk lontaran bass sub yang menggelegar jauh.
-                    </p>
-                    <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded">High Pressure Bass</span>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-amber-500/50 transition">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-sliders"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Power & Driver Audio</h3>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Disokong driver amplifier bertenaga handal (SOCL/TBM), suplai SMPS stabil, serta manajemen crossover untuk kejernihan vokal dan mid-high.
-                    </p>
-                    <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded">Clean Signal Routing</span>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-amber-500/50 transition">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Rental Acara Umum</h3>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Siap melayani kebutuhan sound system untuk acara pernikahan, pentas seni sekolah, pengajian akbar, hingga carnival sound.
-                    </p>
-                    <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded">Full Day Service</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeri / Tampilan Box -->
-    <section id="galeri" class="py-20 bg-slate-900/50 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-3">Galeri & Dokumentasi Rigging</h2>
-                <p class="text-slate-400">Penampakan unit dan kesiapan perangkat di lapangan.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center">
-                    <div class="bg-slate-800 h-48 rounded-xl flex flex-col items-center justify-center text-slate-500 mb-4">
-                        <i class="fa-solid fa-image text-4xl mb-2"></i>
-                        <span class="text-xs">Setup Miniscoop Sub</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Rigging Subwoofer Lapangan</h4>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center">
-                    <div class="bg-slate-800 h-48 rounded-xl flex flex-col items-center justify-center text-slate-500 mb-4">
-                        <i class="fa-solid fa-image text-4xl mb-2"></i>
-                        <span class="text-xs">Rack Power Amp</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Rak Power & Mixer Konsol</h4>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center">
-                    <div class="bg-slate-800 h-48 rounded-xl flex flex-col items-center justify-center text-slate-500 mb-4">
-                        <i class="fa-solid fa-image text-4xl mb-2"></i>
-                        <span class="text-xs">Mid High & Tweeter</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Line Array & Mid High Box</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kontak / Footer -->
-    <footer id="kontak" class="bg-slate-950 border-t border-slate-800 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-gradient-to-r from-amber-500/10 via-slate-900 to-amber-500/10 border border-amber-500/20 rounded-3xl p-10 mb-12">
-                <h3 class="text-2xl sm:text-3xl font-bold mb-4">Tertarik Menggunakan Jasa Mulya Sound System?</h3>
-                <p class="text-slate-400 max-w-xl mx-auto mb-8">Hubungi kami sekarang untuk konsultasi kebutuhan audio atau pemesanan jadwal sewa.</p>
-                <a href="https://wa.me/" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-xl transition shadow-lg shadow-green-600/20">
-                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Hubungi via WhatsApp
-                </a>
-            </div>
-            
-            <div class="flex flex-col md:flex-row items-center justify-between border-t border-slate-900 pt-8 text-sm text-slate-500">
-                <p>&copy; <span id="year"></span> Mulya Sound System. All rights reserved.</p>
-                <p class="mt-4 md:mt-0">Built with passion for professional audio performance.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript Sederhana -->
     <script>
-        // Otomatis update tahun di footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Dekode Token JWT dari Google untuk Mengambil Profil Pengguna
+        function parseJwt(token) {
+            try {
+                const base64Url = token.split('.')[1];
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#0B0F17',
+                            900: '#111827',
+                            850: '#151E2E',
+                            800: '#1F293D',
+                        }
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('realtimeApp', () => ({
+                mobileMenu: false,
+                currentTime: '',
+                currentDate: '',
+                activeTab: 'senin',
+                
+                // State User Login
+                isLoggedIn: false,
+                userProfile: { name: '', email: '', role: '', avatar: '' },
+
+                // State Form Login / Register Manual
+                authMode: 'login',
+                loginEmail: '',
+                loginPassword: '',
+                regName: '',
+                regEmail: '',
+                regPassword: '',
+                isAuthLoading: false,
+
+                // Password Admin Pengurus Kelas
+                adminPassword: '7ehebat2026',
+
+                // State Modal Auth Pengumuman
+                showAuthModal: false,
+                authAction: '', 
+                deleteTargetId: null,
+                inputPassword: '',
+                authError: false,
+
+                // State Pengumuman Realtime (LocalStorage)
+                announcements: JSON.parse(localStorage.getItem('kelas7e_announcements')) || [
+                    { 
+                        id: 1, 
+                        category: 'Tugas & Kerja Kelompok', 
+                        badgeColor: 'gold-badge text-amber-400', 
+                        time: 'Minggu Ini', 
+                        title: 'Pengumpulan Tugas IPA & Kliping Informatika', 
+                        desc: 'Diharapkan tiap kelompok membawa hasil laporan praktikum dan kliping yang telah diselesaikan. Pengumpulan dilakukan pada jam pertama.', 
+                        author: 'Sekretaris Kelas', 
+                        status: 'Penting', 
+                        statusColor: 'text-amber-400' 
+                    },
+                    { 
+                        id: 2, 
+                        category: 'Kas Kelas', 
+                        badgeColor: 'bg-indigo-500/10 border border-indigo-500/20 text-indigo-300', 
+                        time: 'Setiap Kamis', 
+                        title: 'Iuran Uang Kas Mingguan Kelas 7E', 
+                        desc: 'Pembayaran iuran kas mingguan dilakukan kepada Bendahara setelah jam istirahat pertama untuk pemeliharaan kebersihan dan peralatan kelas.', 
+                        author: 'Bendahara Kelas', 
+                        status: 'Rutin', 
+                        statusColor: 'text-indigo-400' 
+                    }
+                ],
+                showModal: false,
+                newCategory: 'Tugas & Kerja Kelompok',
+                newTime: 'Hari Ini',
+                newTitle: '',
+                newDesc: '',
+                newAuthor: 'Pengurus Kelas',
+                newStatus: 'Penting',
+
+                init() {
+                    this.updateTime();
+                    setInterval(() => this.updateTime(), 1000);
+                    this.setAutoDay();
+                    
+                    // Cek Sesi Login dari LocalStorage
+                    const savedUser = localStorage.getItem('kelas7e_user');
+                    if (savedUser) {
+                        this.userProfile = JSON.parse(savedUser);
+                        this.isLoggedIn = true;
+                    }
+
+                    // Callback saat login Google Berhasil
+                    window.handleGoogleCredentialResponse = (response) => {
+                        const googleUser = parseJwt(response.credential);
+                        if (googleUser) {
+                            const isDeveloper = (googleUser.email.toLowerCase() === 'alipdwn13@gmail.com');
+
+                            this.userProfile = {
+                                name: googleUser.name,
+                                email: googleUser.email,
+                                role: isDeveloper ? 'Pembuat Web & Pengurus' : '',
+                                avatar: googleUser.picture
+                            };
+                            this.isLoggedIn = true;
+                            localStorage.setItem('kelas7e_user', JSON.stringify(this.userProfile));
+                        }
+                    };
+
+                    // Inisialisasi Google Auth SDK dengan Client ID kamu
+                    const checkGsi = setInterval(() => {
+                        if (typeof google !== 'undefined' && google.accounts) {
+                            clearInterval(checkGsi);
+                            google.accounts.id.initialize({
+                                client_id: '860718785165-hi74almmqmr0tald91gboitrssk5bi4r.apps.googleusercontent.com',
+                                callback: window.handleGoogleCredentialResponse
+                            });
+                            google.accounts.id.renderButton(
+                                document.getElementById("googleBtnContainer"),
+                                { theme: "outline", size: "large", width: "100%", text: "continue_with" }
+                            );
+                        }
+                    }, 200);
+                },
+                
+                updateTime() {
+                    const now = new Date();
+                    this.currentTime = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB';
+                    this.currentDate = now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+                },
+
+                setAutoDay() {
+                    const days = ['minggu', 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu'];
+                    const currentDay = days[new Date().getDay()];
+                    if (['senin', 'selasa', 'rabu', 'kamis', 'jumat'].includes(currentDay)) {
+                        this.activeTab = currentDay;
+                    } else {
+                        this.activeTab = 'senin';
+                    }
+                },
+
+                // Auth Manual Email
+                handleEmailLogin() {
+                    if (!this.loginEmail || !this.loginPassword) return alert('Silakan isi email dan password!');
+                    this.isAuthLoading = true;
+                    setTimeout(() => {
+                        this.isAuthLoading = false;
+                        const nameFromEmail = this.loginEmail.split('@')[0];
+                        const isDeveloper = (this.loginEmail.toLowerCase() === 'alipdwn13@gmail.com');
+
+                        this.userProfile = {
+                            name: nameFromEmail,
+                            email: this.loginEmail,
+                            role: isDeveloper ? 'Pembuat Web & Pengurus' : '',
+                            avatar: `https://ui-avatars.com/api/?name=${nameFromEmail}&background=6366f1&color=fff`
+                        };
+                        this.isLoggedIn = true;
+                        localStorage.setItem('kelas7e_user', JSON.stringify(this.userProfile));
+                    }, 800);
+                },
+
+                handleRegister() {
+                    if (!this.regName || !this.regEmail || !this.regPassword) return alert('Lengkapi data pendaftaran!');
+                    this.isAuthLoading = true;
+                    setTimeout(() => {
+                        this.isAuthLoading = false;
+                        const isDeveloper = (this.regEmail.toLowerCase() === 'alipdwn13@gmail.com');
+
+                        this.userProfile = {
+                            name: this.regName,
+                            email: this.regEmail,
+                            role: isDeveloper ? 'Pembuat Web & Pengurus' : '',
+                            avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(this.regName)}&background=6366f1&color=fff`
+                        };
+                        this.isLoggedIn = true;
+                        localStorage.setItem('kelas7e_user', JSON.stringify(this.userProfile));
+                    }, 800);
+                },
+
+                logout() {
+                    this.isLoggedIn = false;
+                    this.userProfile = {};
+                    localStorage.removeItem('kelas7e_user');
+                    if (typeof google !== 'undefined' && google.accounts) {
+                        google.accounts.id.disableAutoSelect();
+                    }
+                },
+
+                // Verifikasi Password Pengurus (Akses Langsung untuk Pembuat Web)
+                requestAddModal() {
+                    if (this.userProfile.role && this.userProfile.role.includes('Pembuat Web')) {
+                        this.showModal = true;
+                        return;
+                    }
+                    this.authAction = 'add';
+                    this.inputPassword = '';
+                    this.authError = false;
+                    this.showAuthModal = true;
+                },
+
+                requestDelete(id) {
+                    if (this.userProfile.role && this.userProfile.role.includes('Pembuat Web')) {
+                        this.announcements = this.announcements.filter(item => item.id !== id);
+                        this.saveAnnouncements();
+                        return;
+                    }
+                    this.authAction = 'delete';
+                    this.deleteTargetId = id;
+                    this.inputPassword = '';
+                    this.authError = false;
+                    this.showAuthModal = true;
+                },
+
+                verifyPassword() {
+                    if (this.inputPassword === this.adminPassword) {
+                        this.showAuthModal = false;
+                        if (this.authAction === 'add') {
+                            this.showModal = true;
+                        } else if (this.authAction === 'delete') {
+                            this.announcements = this.announcements.filter(item => item.id !== this.deleteTargetId);
+                            this.saveAnnouncements();
+                        }
+                    } else {
+                        this.authError = true;
+                    }
+                },
+
+                // CRUD Pengumuman
+                saveAnnouncements() {
+                    localStorage.setItem('kelas7e_announcements', JSON.stringify(this.announcements));
+                },
+                addAnnouncement() {
+                    if(!this.newTitle || !this.newDesc) {
+                        alert('Judul dan Deskripsi pengumuman wajib diisi!');
+                        return;
+                    }
+                    
+                    const isGold = this.newStatus === 'Penting';
+                    this.announcements.unshift({
+                        id: Date.now(),
+                        category: this.newCategory,
+                        badgeColor: isGold ? 'gold-badge text-amber-400' : 'bg-indigo-500/10 border border-indigo-500/20 text-indigo-300',
+                        time: this.newTime,
+                        title: this.newTitle,
+                        desc: this.newDesc,
+                        author: this.userProfile.role && this.userProfile.role.includes('Pembuat Web') ? 'Pembuat Web' : this.newAuthor,
+                        status: this.newStatus,
+                        statusColor: isGold ? 'text-amber-400' : 'text-indigo-400'
+                    });
+
+                    this.saveAnnouncements();
+                    this.newTitle = '';
+                    this.newDesc = '';
+                    this.showModal = false;
+                }
+            }));
+        });
     </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .glass-header {
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .card-premium {
+            background: rgba(21, 30, 46, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-premium:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        .gold-badge {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.05) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased font-sans selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col justify-between" x-data="realtimeApp">
+
+    <!-- SCREEN 1: GERBANG LOGIN -->
+    <div x-show="!isLoggedIn" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950 overflow-y-auto" x-cloak x-transition>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative my-auto">
+            
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-700 text-white font-extrabold flex items-center justify-center mx-auto mb-3 text-base shadow-lg shadow-indigo-950">7E</div>
+                <h2 class="text-xl font-bold text-white tracking-tight">Portal Kelas 7E</h2>
+                <p class="text-xs text-slate-400 mt-1">Silakan masuk dahulu untuk mengakses portal kelas.</p>
+            </div>
+
+            <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 mb-5">
+                <button @click="authMode = 'login'" :class="authMode === 'login' ? 'bg-indigo-600 text-white' : 'text-slate-400'" class="flex-1 py-2 rounded-lg font-semibold text-xs transition">Masuk Akun</button>
+                <button @click="authMode = 'register'" :class="authMode === 'register' ? 'bg-indigo-600 text-white' : 'text-slate-400'" class="flex-1 py-2 rounded-lg font-semibold text-xs transition">Daftar Akun</button>
+            </div>
+
+            <!-- FORM LOGIN MANUAL -->
+            <div x-show="authMode === 'login'">
+                <form @submit.prevent="handleEmailLogin()" class="space-y-3.5">
+                    <div>
+                        <label class="block text-[11px] font-semibold text-slate-300 mb-1">Email</label>
+                        <input type="email" x-model="loginEmail" placeholder="nama@gmail.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-slate-300 mb-1">Password</label>
+                        <input type="password" x-model="loginPassword" placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <button type="submit" :disabled="isAuthLoading" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition shadow-md mt-2">
+                        <span x-show="!isAuthLoading">Masuk Sekarang</span>
+                        <span x-show="isAuthLoading"><i class="fa-solid fa-circle-notch animate-spin"></i> Memproses...</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- FORM REGISTER MANUAL -->
+            <div x-show="authMode === 'register'" x-cloak>
+                <form @submit.prevent="handleRegister()" class="space-y-3.5">
+                    <div>
+                        <label class="block text-[11px] font-semibold text-slate-300 mb-1">Nama Lengkap</label>
+                        <input type="text" x-model="regName" placeholder="Contoh: Ahmad Rizky" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-slate-300 mb-1">Email</label>
+                        <input type="email" x-model="regEmail" placeholder="nama@gmail.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-slate-300 mb-1">Password</label>
+                        <input type="password" x-model="regPassword" placeholder="Minimal 6 Karakter" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <button type="submit" :disabled="isAuthLoading" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition shadow-md mt-2">
+                        <span x-show="!isAuthLoading">Buat Akun Baru</span>
+                        <span x-show="isAuthLoading"><i class="fa-solid fa-circle-notch animate-spin"></i> Memproses...</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="relative my-4">
+                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-800"></div></div>
+                <div class="relative flex justify-center text-[10px] uppercase font-bold"><span class="bg-slate-900 px-2 text-slate-500">Atau Sign In Asli</span></div>
+            </div>
+
+            <!-- WIDGET TOMBOL GOOGLE SIGN-IN RESMI -->
+            <div id="googleBtnContainer" class="w-full flex justify-center min-h-[44px]"></div>
+
+            <p class="text-[10px] text-center text-slate-500 mt-4">SMP Negeri 1 Cisaga — Kelas 7E Digital</p>
+        </div>
+    </div>
+
+
+    <!-- SCREEN 2: UTAMA WEB PORTAL (SETELAH LOGIN) -->
+    <div x-show="isLoggedIn" x-cloak class="w-full">
+        
+        <nav class="glass-header border-b border-slate-800/60 sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    
+                    <a href="#" class="flex items-center gap-3.5 group">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center text-white font-extrabold text-base shadow-lg shadow-indigo-900/40 border border-indigo-400/20">
+                            7E
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-lg tracking-tight text-white">SMPN 1 CISAGA</span>
+                                <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full gold-badge text-amber-400">KELAS 7E</span>
+                            </div>
+                            <p class="text-xs text-slate-400 font-normal">Portal Digital Resmi</p>
+                        </div>
+                    </a>
+
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#beranda" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition">Beranda</a>
+                        <a href="#pengumuman" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition">Pengumuman</a>
+                        <a href="#pengurus" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition">Pengurus</a>
+                        <a href="#jadwal" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition">Jadwal</a>
+                        <a href="#galeri" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition">Galeri</a>
+                    </div>
+
+                    <div class="hidden md:flex items-center gap-3">
+                        <div class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-right">
+                            <div class="text-xs font-bold text-indigo-400 font-mono tracking-wider" x-text="currentTime">00:00:00 WIB</div>
+                            <div class="text-[10px] text-slate-400" x-text="currentDate">-</div>
+                        </div>
+
+                        <!-- Profil User (Hanya Tampilkan Badge Khusus untuk Pembuat Web) -->
+                        <div class="flex items-center gap-2.5 bg-slate-900 border border-slate-800 p-1.5 pr-2.5 rounded-xl">
+                            <img :src="userProfile.avatar" class="w-8 h-8 rounded-lg object-cover">
+                            <div class="text-left pr-1">
+                                <p class="text-xs font-bold text-white leading-none max-w-[120px] truncate" x-text="userProfile.name"></p>
+                                <template x-if="userProfile.role && userProfile.role.includes('Pembuat Web')">
+                                    <p class="text-[10px] font-bold leading-none mt-1 text-amber-400" x-text="userProfile.role"></p>
+                                </template>
+                            </div>
+                            <button @click="logout()" class="text-slate-500 hover:text-rose-400 px-1 text-xs transition" title="Keluar">
+                                <i class="fa-solid fa-power-off"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:hidden flex items-center">
+                        <button @click="mobileMenu = !mobileMenu" class="text-slate-300 hover:text-white p-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:outline-none">
+                            <i class="fa-solid" :class="mobileMenu ? 'fa-xmark text-lg' : 'fa-bars text-lg'"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div x-show="mobileMenu" x-transition class="md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2" x-cloak>
+                <div class="px-3 py-2 rounded-lg bg-slate-950/80 border border-slate-800 mb-3 text-center">
+                    <div class="text-xs font-bold text-indigo-400 font-mono" x-text="currentTime">00:00:00 WIB</div>
+                    <div class="text-[10px] text-slate-400" x-text="currentDate">-</div>
+                </div>
+                <a href="#beranda" @click="mobileMenu = false" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800">Beranda</a>
+                <a href="#pengumuman" @click="mobileMenu = false" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800">Pengumuman</a>
+                <a href="#pengurus" @click="mobileMenu = false" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800">Pengurus</a>
+                <a href="#jadwal" @click="mobileMenu = false" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800">Jadwal Pelajaran</a>
+                <a href="#galeri" @click="mobileMenu = false" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800">Galeri Foto</a>
+                <div class="pt-2 border-t border-slate-800">
+                    <button @click="logout(); mobileMenu = false" class="w-full py-2.5 rounded-xl bg-rose-600/20 border border-rose-500/30 text-rose-300 font-semibold text-xs">Keluar (<span x-text="userProfile.name"></span>)</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section id="beranda" class="relative py-20 lg:py-28 overflow-hidden border-b border-slate-800/80 bg-slate-950">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-indigo-900/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl mx-auto text-center">
+                    
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span x-text="currentDate"></span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+                        Pusat Informasi Digital <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-indigo-200 to-amber-200">Kelas 7E SMP Negeri 1 Cisaga</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-400 font-normal leading-relaxed mb-8 max-w-2xl mx-auto">
+                        Akses ringkas dan cepat untuk agenda pelajaran, pengumuman akademis, tugas harian, serta dokumentasi kebersamaan siswa Kelas 7E.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
+                        <a href="#jadwal" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs tracking-wide transition shadow-lg shadow-indigo-950/50 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-clock"></i> Jadwal & Agenda
+                        </a>
+                        <a href="#pengumuman" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/80 font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bullhorn text-slate-400"></i> Pengumuman
+                        </a>
+                    </div>
+
+                    <!-- Stats Dashboard Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+                        <div class="card-premium p-5 rounded-2xl">
+                            <p class="text-xs text-slate-400 font-medium mb-1">Total Siswa</p>
+                            <p class="text-2xl font-bold text-white">32 <span class="text-xs font-normal text-slate-500">Orang</span></p>
+                        </div>
+                        <div class="card-premium p-5 rounded-2xl">
+                            <p class="text-xs text-slate-400 font-medium mb-1">Mata Pelajaran</p>
+                            <p class="text-2xl font-bold text-white">11 <span class="text-xs font-normal text-slate-500">Mapel</span></p>
+                        </div>
+                        <div class="card-premium p-5 rounded-2xl">
+                            <p class="text-xs text-slate-400 font-medium mb-1">Wali Kelas</p>
+                            <p class="text-xs sm:text-sm font-semibold text-amber-400 leading-snug">Ika SUKMAWATI, S.Pd.</p>
+                        </div>
+                        <div class="card-premium p-5 rounded-2xl">
+                            <p class="text-xs text-slate-400 font-medium mb-1">Ruang Kelas</p>
+                            <p class="text-2xl font-bold text-indigo-400">7E</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PENGUMUMAN REALTIME -->
+        <section id="pengumuman" class="py-20 bg-slate-900/30 border-b border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <span class="text-xs font-semibold text-indigo-400 uppercase tracking-widest block mb-1">Papan Informasi</span>
+                        <h2 class="text-3xl font-bold text-white tracking-tight">Pengumuman Terbaru</h2>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button @click="requestAddModal()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition flex items-center gap-2 shadow-lg shadow-indigo-950/50">
+                            <i class="fa-solid fa-plus"></i> Tambah Pengumuman
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <template x-for="item in announcements" :key="item.id">
+                        <div class="card-premium p-6 rounded-2xl relative overflow-hidden flex flex-col justify-between group">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="px-3 py-1 rounded-full text-xs font-semibold" :class="item.badgeColor" x-text="item.category"></span>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-xs text-slate-500"><i class="fa-regular fa-clock mr-1"></i> <span x-text="item.time"></span></span>
+                                        <button @click="requestDelete(item.id)" class="text-slate-500 hover:text-rose-400 text-xs transition" title="Hapus Pengumuman">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-bold text-white mb-2" x-text="item.title"></h3>
+                                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5" x-text="item.desc"></p>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-slate-400 pt-4 border-t border-slate-800/80">
+                                <span>Oleh: <span x-text="item.author" class="font-medium text-slate-200"></span></span>
+                                <span class="font-medium" :class="item.statusColor" x-text="item.status"></span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <template x-if="announcements.length === 0">
+                    <div class="text-center py-12 border border-dashed border-slate-800 rounded-2xl">
+                        <i class="fa-regular fa-folder-open text-3xl text-slate-600 mb-3"></i>
+                        <p class="text-sm text-slate-400">Belum ada pengumuman.</p>
+                    </div>
+                </template>
+
+            </div>
+        </section>
+
+        <!-- SECTION: PENGURUS KELAS (DIPERBARUI DENGAN NAMA PENGURUS) -->
+        <section id="pengurus" class="py-20 bg-slate-950 border-b border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest block mb-1">Kepengurusan</span>
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Pengurus Kelas 7E</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">
+                        Struktur organisasi dan penanggung jawab aktivitas harian kelas.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-premium p-6 rounded-2xl text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-base flex items-center justify-center mx-auto mb-4">KM</div>
+                        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-1">Ketua Kelas</span>
+                        <h3 class="text-base font-bold text-white">M. Farhan Al-Fatih</h3>
+                        <p class="text-xs text-slate-400 mt-1">Koordinator Utama</p>
+                    </div>
+                    <div class="card-premium p-6 rounded-2xl text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-base flex items-center justify-center mx-auto mb-4">WKM</div>
+                        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-1">Wakil Ketua</span>
+                        <h3 class="text-base font-bold text-white">Siti Aisyah Putri</h3>
+                        <p class="text-xs text-slate-400 mt-1">Pendamping Koordinator</p>
+                    </div>
+                    <div class="card-premium p-6 rounded-2xl text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-base flex items-center justify-center mx-auto mb-4">SEK</div>
+                        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-1">Sekretaris</span>
+                        <h3 class="text-base font-bold text-white">Nabila Zahra</h3>
+                        <p class="text-xs text-slate-400 mt-1">Administrasi & Info</p>
+                    </div>
+                    <div class="card-premium p-6 rounded-2xl text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-800 border border-slate-700 text-slate-300 font-bold text-base flex items-center justify-center mx-auto mb-4">BEN</div>
+                        <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-1">Bendahara</span>
+                        <h3 class="text-base font-bold text-white">Rizky Ramadhan</h3>
+                        <p class="text-xs text-slate-400 mt-1">Pengelola Uang Kas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: JADWAL PELAJARAN -->
+        <section id="jadwal" class="py-20 bg-slate-900/30 border-b border-slate-800/80">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-widest block mb-1">Agenda Pembelajaran</span>
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Jadwal Pelajaran Harian</h2>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-2 mb-8 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800/80 max-w-lg mx-auto">
+                    <button @click="activeTab = 'senin'" :class="activeTab === 'senin' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Senin</button>
+                    <button @click="activeTab = 'selasa'" :class="activeTab === 'selasa' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Selasa</button>
+                    <button @click="activeTab = 'rabu'" :class="activeTab === 'rabu' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Rabu</button>
+                    <button @click="activeTab = 'kamis'" :class="activeTab === 'kamis' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Kamis</button>
+                    <button @click="activeTab = 'jumat'" :class="activeTab === 'jumat' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Jumat</button>
+                </div>
+
+                <div class="card-premium p-6 sm:p-8 rounded-3xl">
+                    <div x-show="activeTab === 'senin'" class="space-y-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <h3 class="text-base font-bold text-white">Hari Senin</h3>
+                            <span class="text-xs font-medium text-slate-400">Upacara & Jam Belajar Utama</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Upacara Bendera</h4>
+                                <p class="text-xs text-slate-400 mt-1">Lap. Utama</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Matematika</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Bahasa Indonesia</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="activeTab === 'selasa'" class="space-y-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <h3 class="text-base font-bold text-white">Hari Selasa</h3>
+                            <span class="text-xs font-medium text-slate-400">Pembiasaan, Sains & Komputer</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Sholat Duha</h4>
+                                <p class="text-xs text-slate-400 mt-1">Masjid Sekolah</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">IPA (Sains)</h4>
+                                <p class="text-xs text-slate-400 mt-1">Lab IPA</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Informatika</h4>
+                                <p class="text-xs text-slate-400 mt-1">Lab Komputer</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Bahasa Sunda</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="activeTab === 'rabu'" class="space-y-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <h3 class="text-base font-bold text-white">Hari Rabu</h3>
+                            <span class="text-xs font-medium text-slate-400">Bahasa & Kesenian</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Bahasa Inggris</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Seni Budaya</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang Kesenian</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Prakarya</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="activeTab === 'kamis'" class="space-y-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <h3 class="text-base font-bold text-white">Hari Kamis</h3>
+                            <span class="text-xs font-medium text-slate-400">Olahraga & Kebangsaan</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">PJOK</h4>
+                                <p class="text-xs text-slate-400 mt-1">Lapangan</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">IPS</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">PPKn</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="activeTab === 'jumat'" class="space-y-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <h3 class="text-base font-bold text-white">Hari Jumat</h3>
+                            <span class="text-xs font-medium text-slate-400">Keagamaan & PAI</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">Pembiasaan Yasinan</h4>
+                                <p class="text-xs text-slate-400 mt-1">Masjid Sekolah</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+                                <h4 class="font-bold text-sm text-white">PAI (Agama Islam)</h4>
+                                <p class="text-xs text-slate-400 mt-1">Ruang 7E</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: GALERI FOTO -->
+        <section id="galeri" class="py-20 bg-slate-950 border-b border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest block mb-1">Dokumentasi</span>
+                        <h2 class="text-3xl font-bold text-white tracking-tight">Galeri Kelas 7E</h2>
+                    </div>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 md:mt-0 max-w-xs">
+                        Arsip foto aktivitas belajar & momen kebersamaan siswa 7E.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="card-premium rounded-2xl overflow-hidden group">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/foto1.jpg" alt="Foto Utama" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm text-white">Foto Kebersamaan 7E</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">Momen di lingkungan SMPN 1 Cisaga</p>
+                        </div>
+                    </div>
+
+                    <div class="card-premium rounded-2xl overflow-hidden group">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/WhatsApp%20Image%202026-08-24%20at%2018.05.44%20(1).jpeg" alt="Belajar Kelompok" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm text-white">Foto Kebersamaan 7E</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">Momen di lingkungan SMPN 1 Cisaga</p>
+                        </div>
+                    </div>
+
+                    <div class="card-premium rounded-2xl overflow-hidden group">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://6a8c191b97833836f657cc38.imgix.net/sandbox/WhatsApp%20Image%202026-08-24%20at%2018.05.44.jpeg" alt="Jam Istirahat" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm text-white">Foto Kebersamaan 7E</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">Momen di lingkungan SMPN 1 Cisaga</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-950 border-t border-slate-800/80 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-xs">
+                        7E
+                    </div>
+                    <div>
+                        <p class="font-bold text-white">Kelas 7E — SMP Negeri 1 Cisaga</p>
+                        <p class="text-[11px] text-slate-500">© 2026 Portal Digital Resmi Kelas 7E</p>
+                    </div>
+                </div>
+                <div class="text-slate-400">
+                    Dikembangkan oleh <span class="font-semibold text-amber-400">Alip Dwi Nugroho</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- MODAL VERIFIKASI ADMIN (TAMPIL HANYA UTK SISWA BIASA) -->
+        <div x-show="showAuthModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md" x-cloak x-transition>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+                <div class="text-center mb-5">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mx-auto mb-3 text-lg">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Verifikasi Pengurus Kelas</h3>
+                    <p class="text-xs text-slate-400 mt-1">Masukkan kata sandi pengurus untuk melanjutkan.</p>
+                </div>
+
+                <form @submit.prevent="verifyPassword()" class="space-y-4">
+                    <div>
+                        <input type="password" x-model="inputPassword" placeholder="Masukkan password..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500 transition">
+                        <p x-show="authError" class="text-[11px] text-rose-400 mt-1.5 font-medium"><i class="fa-solid fa-circle-exclamation mr-1"></i> Kata sandi salah!</p>
+                    </div>
+
+                    <div class="flex items-center gap-2 pt-2">
+                        <button type="button" @click="showAuthModal = false" class="w-1/2 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition">Batal</button>
+                        <button type="submit" class="w-1/2 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition">Verifikasi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- MODAL TAMBAH PENGUMUMAN -->
+        <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm" x-cloak x-transition>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+                <div class="flex items-center justify-between mb-5 border-b border-slate-800 pb-3">
+                    <h3 class="text-base font-bold text-white">Buat Pengumuman Baru</h3>
+                    <button @click="showModal = false" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+                </div>
+
+                <div class="space-y-4 text-xs">
+                    <div>
+                        <label class="block text-slate-300 font-medium mb-1">Judul Pengumuman</label>
+                        <input type="text" x-model="newTitle" placeholder="Contoh: Pengumpulan Tugas IPA" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-slate-300 font-medium mb-1">Kategori</label>
+                            <select x-model="newCategory" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500">
+                                <option value="Tugas & Kerja Kelompok">Tugas & Kerja Kelompok</option>
+                                <option value="Kas Kelas">Kas Kelas</option>
+                                <option value="Info Sekolah">Info Sekolah</option>
+                                <option value="Kegiatan">Kegiatan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-300 font-medium mb-1">Waktu / Jadwal</label>
+                            <input type="text" x-model="newTime" placeholder="Contoh: Minggu Ini / Besok" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-slate-300 font-medium mb-1">Isi Detail Pengumuman</label>
+                        <textarea x-model="newDesc" rows="3" placeholder="Tuliskan detail pengumuman..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500"></textarea>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-slate-300 font-medium mb-1">Penulis / Pembuat</label>
+                            <input type="text" x-model="newAuthor" placeholder="Sekretaris Kelas" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-slate-300 font-medium mb-1">Status Badge</label>
+                            <select x-model="newStatus" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500">
+                                <option value="Penting">Penting (Warna Emas)</option>
+                                <option value="Rutin">Rutin (Warna Biru)</option>
+                                <option value="Info">Info (Standard)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-end gap-3 mt-6 pt-4 border-t border-slate-800">
+                    <button @click="showModal = false" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">Batal</button>
+                    <button @click="addAnnouncement()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Simpan Pengumuman</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
