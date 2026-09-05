@@ -53,8 +53,9 @@
                 currentDate: '',
                 activeTab: 'senin',
                 
-                // State User Login
+                // State User Login & Jumpscare
                 isLoggedIn: false,
+                showJumpscare: false,
                 userProfile: { name: '', email: '', role: '', avatar: '' },
 
                 // State Form Login / Register Manual
@@ -91,8 +92,7 @@
                                 role: isDeveloper ? 'Pembuat Web & Pengurus' : 'Siswa',
                                 avatar: googleUser.picture
                             };
-                            this.isLoggedIn = true;
-                            localStorage.setItem('kelas7e_user', JSON.stringify(this.userProfile));
+                            this.triggerJumpscareAndLogin();
                         }
                     };
 
@@ -110,6 +110,36 @@
                             );
                         }
                     }, 200);
+                },
+
+                // Fungsi Trigger Efek Jumpscare Habis Login
+                triggerJumpscareAndLogin() {
+                    this.showJumpscare = true;
+                    
+                    // Mainkan efek suara kejut menggunakan Web Audio API (Biar gak perlu file MP3 eksternal)
+                    try {
+                        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'sawtooth';
+                        osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+                        osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.4);
+                        gain.gain.setValueAtTime(1, audioCtx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        osc.start();
+                        osc.stop(audioCtx.currentTime + 0.4);
+                    } catch (e) {
+                        console.log("Audio Context diblokir browser sebelum interaksi.");
+                    }
+
+                    // Setelah 1.8 detik, hilangkan jumpscare dan masuk aplikasi utama
+                    setTimeout(() => {
+                        this.showJumpscare = false;
+                        this.isLoggedIn = true;
+                        localStorage.setItem('kelas7e_user', JSON.stringify(this.userProfile));
+                    }, 1800);
                 },
                 
                 updateTime() {
@@ -143,8 +173,7 @@
                             role: isDeveloper ? 'Pembuat Web & Pengurus' : 'Siswa',
                             avatar: `https://ui-avatars.com/api/?name=${nameFromEmail}&background=6366f1&color=fff`
                         };
-                        this.isLoggedIn = true;
-                        localStorage.setItem('kelas7e_user', JSON.stringify(this.userProfile));
+                        this.triggerJumpscareAndLogin();
                     }, 800);
                 },
 
@@ -161,8 +190,7 @@
                             role: isDeveloper ? 'Pembuat Web & Pengurus' : this.regRole,
                             avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(this.regName)}&background=6366f1&color=fff`
                         };
-                        this.isLoggedIn = true;
-                        localStorage.setItem('kelas7e_user', JSON.stringify(this.userProfile));
+                        this.triggerJumpscareAndLogin();
                     }, 800);
                 },
 
@@ -198,6 +226,19 @@
         .gold-badge {
             background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.05) 100%);
             border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+
+        /* Animasi Jumpscare & Layar Bergetar */
+        @keyframes shake {
+            0% { transform: translate(0, 0) scale(1); }
+            20% { transform: translate(-15px, 10px) scale(1.1); }
+            40% { transform: translate(15px, -10px) scale(1.2); }
+            60% { transform: translate(-10px, -10px) scale(1.15); }
+            80% { transform: translate(10px, 15px) scale(1.1); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        .jumpscare-shake {
+            animation: shake 0.3s ease-in-out infinite;
         }
 
         .btn-3d-indigo {
@@ -240,7 +281,23 @@
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased font-sans selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col justify-between" x-data="realtimeApp">
 
-    <div x-show="!isLoggedIn" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950 overflow-y-auto" x-cloak x-transition>
+    <!-- MODAL JUMPSCARE SETELAH LOGIN -->
+    <div x-show="showJumpscare" x-cloak class="fixed inset-0 z-[99999] flex items-center justify-center bg-red-950/90 backdrop-blur-md" x-transition.opacity>
+        <div class="text-center jumpscare-shake p-6">
+            <div class="w-32 h-32 rounded-3xl bg-red-600 text-white font-extrabold flex items-center justify-center mx-auto mb-6 text-6xl shadow-[0_0_50px_rgba(239,68,68,0.9)] border-4 border-white">
+                😱
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]">
+                JUMPSCARE! 👻
+            </h1>
+            <p class="text-amber-300 text-lg sm:text-2xl font-bold mt-3 drop-shadow">
+                Wah, <span x-text="userProfile.name"></span> Ketahuan Masuk! 👀
+            </p>
+        </div>
+    </div>
+
+    <!-- KARTU LOGIN UTAMA -->
+    <div x-show="!isLoggedIn && !showJumpscare" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950 overflow-y-auto" x-cloak x-transition>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative my-auto">
