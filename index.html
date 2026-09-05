@@ -447,21 +447,23 @@
                     </div>
 
                     <div class="hidden md:flex items-center gap-3">
-                        <div class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-right">
-                            <div class="text-xs font-bold text-indigo-400 font-mono tracking-wider" x-text="currentTime">00:00:00 WIB</div>
-                            <div class="text-[10px] text-slate-400" x-text="currentDate">-</div>
+                        <!-- Perbaikan Tata Letak Waktu agar Lebih Rapi & Proporsional -->
+                        <div class="px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-right flex flex-col justify-center">
+                            <div class="text-xs font-bold text-indigo-400 font-mono tracking-wider leading-tight" x-text="currentTime">00:00:00 WIB</div>
+                            <div class="text-[10px] text-slate-400 leading-tight mt-0.5" x-text="currentDate">-</div>
                         </div>
 
-                        <div class="flex items-center gap-2.5 bg-slate-900 border border-slate-800 p-1.5 pr-2.5 rounded-xl">
-                            <img :src="userProfile.avatar" class="w-8 h-8 rounded-lg object-cover">
-                            <div class="text-left pr-1">
-                                <p class="text-xs font-bold text-white leading-none max-w-[120px] truncate" x-text="userProfile.name"></p>
-                                <p class="text-[10px] font-semibold leading-none mt-1" 
+                        <!-- Perbaikan Tata Letak Profil & Tombol Power agar Seimbang -->
+                        <div class="flex items-center gap-3 bg-slate-900/90 border border-slate-800 p-1.5 pl-2.5 pr-2 rounded-xl">
+                            <img :src="userProfile.avatar" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                            <div class="text-left min-w-[90px] max-w-[130px]">
+                                <p class="text-xs font-bold text-white leading-snug truncate" x-text="userProfile.name"></p>
+                                <p class="text-[10px] font-semibold leading-tight truncate mt-0.5" 
                                    :class="userProfile.role.includes('Pembuat Web') ? 'text-amber-400 font-bold' : 'text-indigo-400'" 
                                    x-text="userProfile.role">
                                 </p>
                             </div>
-                            <button @click="logout()" class="w-7 h-7 rounded-lg bg-rose-500/10 text-slate-400 hover:text-rose-400 flex items-center justify-center text-xs transition" title="Keluar">
+                            <button @click="logout()" class="w-8 h-8 rounded-lg bg-rose-500/10 text-slate-400 hover:text-rose-400 flex items-center justify-center text-xs transition flex-shrink-0" title="Keluar">
                                 <i class="fa-solid fa-power-off"></i>
                             </button>
                         </div>
