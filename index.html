@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelas 7E — SMP Negeri 1 Cisaga</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- SDK Resmi Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <script>
@@ -316,11 +311,48 @@
             background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.05) 100%);
             border: 1px solid rgba(245, 158, 11, 0.25);
         }
+
+        /* --- KELAS TOMBOL EFEK 3D --- */
+        .btn-3d-indigo {
+            background: linear-gradient(to bottom, #6366f1, #4f46e5);
+            box-shadow: 0 5px 0 #3730a3, 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+            transition: all 0.1s ease;
+        }
+        .btn-3d-indigo:hover {
+            background: linear-gradient(to bottom, #818cf8, #6366f1);
+        }
+        .btn-3d-indigo:active {
+            transform: translateY(4px);
+            box-shadow: 0 1px 0 #3730a3, 0 5px 10px -3px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-3d-slate {
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 0 #020617, 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            transition: all 0.1s ease;
+        }
+        .btn-3d-slate:hover {
+            background: linear-gradient(to bottom, #334155, #1e293b);
+        }
+        .btn-3d-slate:active {
+            transform: translateY(4px);
+            box-shadow: 0 1px 0 #020617, 0 5px 10px -3px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-3d-rose {
+            background: linear-gradient(to bottom, #e11d48, #be123c);
+            box-shadow: 0 5px 0 #881337, 0 10px 15px -3px rgba(225, 29, 72, 0.4);
+            transition: all 0.1s ease;
+        }
+        .btn-3d-rose:active {
+            transform: translateY(4px);
+            box-shadow: 0 1px 0 #881337, 0 5px 10px -3px rgba(225, 29, 72, 0.4);
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased font-sans selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col justify-between" x-data="realtimeApp">
 
-    <!-- SCREEN 1: GERBANG LOGIN -->
     <div x-show="!isLoggedIn" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950 overflow-y-auto" x-cloak x-transition>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -333,11 +365,10 @@
             </div>
 
             <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 mb-5">
-                <button @click="authMode = 'login'" :class="authMode === 'login' ? 'bg-indigo-600 text-white' : 'text-slate-400'" class="flex-1 py-2 rounded-lg font-semibold text-xs transition">Masuk Akun</button>
-                <button @click="authMode = 'register'" :class="authMode === 'register' ? 'bg-indigo-600 text-white' : 'text-slate-400'" class="flex-1 py-2 rounded-lg font-semibold text-xs transition">Daftar Akun</button>
+                <button @click="authMode = 'login'" :class="authMode === 'login' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400'" class="flex-1 py-2 rounded-lg font-semibold text-xs transition">Masuk Akun</button>
+                <button @click="authMode = 'register'" :class="authMode === 'register' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400'" class="flex-1 py-2 rounded-lg font-semibold text-xs transition">Daftar Akun</button>
             </div>
 
-            <!-- FORM LOGIN MANUAL -->
             <div x-show="authMode === 'login'">
                 <form @submit.prevent="handleEmailLogin()" class="space-y-3.5">
                     <div>
@@ -348,14 +379,13 @@
                         <label class="block text-[11px] font-semibold text-slate-300 mb-1">Password</label>
                         <input type="password" x-model="loginPassword" placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
                     </div>
-                    <button type="submit" :disabled="isAuthLoading" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition shadow-md mt-2">
+                    <button type="submit" :disabled="isAuthLoading" class="w-full py-3 rounded-xl btn-3d-indigo text-white font-semibold text-xs transition mt-2">
                         <span x-show="!isAuthLoading">Masuk Sekarang</span>
                         <span x-show="isAuthLoading"><i class="fa-solid fa-circle-notch animate-spin"></i> Memproses...</span>
                     </button>
                 </form>
             </div>
 
-            <!-- FORM REGISTER MANUAL -->
             <div x-show="authMode === 'register'" x-cloak>
                 <form @submit.prevent="handleRegister()" class="space-y-3.5">
                     <div>
@@ -370,7 +400,7 @@
                         <label class="block text-[11px] font-semibold text-slate-300 mb-1">Password</label>
                         <input type="password" x-model="regPassword" placeholder="Minimal 6 Karakter" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500">
                     </div>
-                    <button type="submit" :disabled="isAuthLoading" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition shadow-md mt-2">
+                    <button type="submit" :disabled="isAuthLoading" class="w-full py-3 rounded-xl btn-3d-indigo text-white font-semibold text-xs transition mt-2">
                         <span x-show="!isAuthLoading">Buat Akun Baru</span>
                         <span x-show="isAuthLoading"><i class="fa-solid fa-circle-notch animate-spin"></i> Memproses...</span>
                     </button>
@@ -382,7 +412,6 @@
                 <div class="relative flex justify-center text-[10px] uppercase font-bold"><span class="bg-slate-900 px-2 text-slate-500">Atau Sign In Asli</span></div>
             </div>
 
-            <!-- WIDGET TOMBOL GOOGLE SIGN-IN RESMI -->
             <div id="googleBtnContainer" class="w-full flex justify-center min-h-[44px]"></div>
 
             <p class="text-[10px] text-center text-slate-500 mt-4">SMP Negeri 1 Cisaga — Kelas 7E Digital</p>
@@ -390,7 +419,6 @@
     </div>
 
 
-    <!-- SCREEN 2: UTAMA WEB PORTAL (SETELAH LOGIN) -->
     <div x-show="isLoggedIn" x-cloak class="w-full">
         
         <nav class="glass-header border-b border-slate-800/60 sticky top-0 z-40">
@@ -424,7 +452,6 @@
                             <div class="text-[10px] text-slate-400" x-text="currentDate">-</div>
                         </div>
 
-                        <!-- Profil User dengan Badge Pembuat Web -->
                         <div class="flex items-center gap-2.5 bg-slate-900 border border-slate-800 p-1.5 pr-2.5 rounded-xl">
                             <img :src="userProfile.avatar" class="w-8 h-8 rounded-lg object-cover">
                             <div class="text-left pr-1">
@@ -434,7 +461,7 @@
                                    x-text="userProfile.role">
                                 </p>
                             </div>
-                            <button @click="logout()" class="text-slate-500 hover:text-rose-400 px-1 text-xs transition" title="Keluar">
+                            <button @click="logout()" class="w-7 h-7 rounded-lg bg-rose-500/10 text-slate-400 hover:text-rose-400 flex items-center justify-center text-xs transition" title="Keluar">
                                 <i class="fa-solid fa-power-off"></i>
                             </button>
                         </div>
@@ -459,12 +486,11 @@
                 <a href="#jadwal" @click="mobileMenu = false" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800">Jadwal Pelajaran</a>
                 <a href="#galeri" @click="mobileMenu = false" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800">Galeri Foto</a>
                 <div class="pt-2 border-t border-slate-800">
-                    <button @click="logout(); mobileMenu = false" class="w-full py-2.5 rounded-xl bg-rose-600/20 border border-rose-500/30 text-rose-300 font-semibold text-xs">Keluar (<span x-text="userProfile.name"></span>)</button>
+                    <button @click="logout(); mobileMenu = false" class="w-full py-2.5 rounded-xl btn-3d-rose text-white font-semibold text-xs">Keluar (<span x-text="userProfile.name"></span>)</button>
                 </div>
             </div>
         </nav>
 
-        <!-- HERO SECTION -->
         <section id="beranda" class="relative py-20 lg:py-28 overflow-hidden border-b border-slate-800/80 bg-slate-950">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-indigo-900/15 rounded-full blur-[140px] pointer-events-none"></div>
 
@@ -485,16 +511,15 @@
                         Akses ringkas dan cepat untuk agenda pelajaran, pengumuman akademis, tugas harian, serta dokumentasi kebersamaan siswa Kelas 7E.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
-                        <a href="#jadwal" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs tracking-wide transition shadow-lg shadow-indigo-950/50 flex items-center justify-center gap-2">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                        <a href="#jadwal" class="w-full sm:w-auto px-7 py-3.5 rounded-xl btn-3d-indigo text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2">
                             <i class="fa-solid fa-clock"></i> Jadwal & Agenda
                         </a>
-                        <a href="#pengumuman" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-850 text-slate-200 border border-slate-700/80 font-semibold text-xs tracking-wide transition flex items-center justify-center gap-2">
+                        <a href="#pengumuman" class="w-full sm:w-auto px-7 py-3.5 rounded-xl btn-3d-slate text-slate-200 font-semibold text-xs tracking-wide flex items-center justify-center gap-2">
                             <i class="fa-solid fa-bullhorn text-slate-400"></i> Pengumuman
                         </a>
                     </div>
 
-                    <!-- Stats Dashboard Grid -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
                         <div class="card-premium p-5 rounded-2xl">
                             <p class="text-xs text-slate-400 font-medium mb-1">Total Siswa</p>
@@ -518,7 +543,6 @@
             </div>
         </section>
 
-        <!-- SECTION: PENGUMUMAN REALTIME -->
         <section id="pengumuman" class="py-20 bg-slate-900/30 border-b border-slate-800/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -528,7 +552,7 @@
                         <h2 class="text-3xl font-bold text-white tracking-tight">Pengumuman Terbaru</h2>
                     </div>
                     <div class="flex items-center gap-3">
-                        <button @click="requestAddModal()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition flex items-center gap-2 shadow-lg shadow-indigo-950/50">
+                        <button @click="requestAddModal()" class="px-5 py-3 rounded-xl btn-3d-indigo text-white font-semibold text-xs flex items-center gap-2">
                             <i class="fa-solid fa-plus"></i> Tambah Pengumuman
                         </button>
                     </div>
@@ -542,7 +566,7 @@
                                     <span class="px-3 py-1 rounded-full text-xs font-semibold" :class="item.badgeColor" x-text="item.category"></span>
                                     <div class="flex items-center gap-3">
                                         <span class="text-xs text-slate-500"><i class="fa-regular fa-clock mr-1"></i> <span x-text="item.time"></span></span>
-                                        <button @click="requestDelete(item.id)" class="text-slate-500 hover:text-rose-400 text-xs transition" title="Hapus Pengumuman">
+                                        <button @click="requestDelete(item.id)" class="w-7 h-7 rounded-lg bg-rose-500/10 text-slate-500 hover:text-rose-400 flex items-center justify-center text-xs transition" title="Hapus Pengumuman">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </div>
@@ -568,7 +592,6 @@
             </div>
         </section>
 
-        <!-- SECTION: PENGURUS KELAS -->
         <section id="pengurus" class="py-20 bg-slate-950 border-b border-slate-800/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-14">
@@ -608,7 +631,6 @@
             </div>
         </section>
 
-        <!-- SECTION: JADWAL PELAJARAN -->
         <section id="jadwal" class="py-20 bg-slate-900/30 border-b border-slate-800/80">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -617,12 +639,12 @@
                     <h2 class="text-3xl font-bold text-white tracking-tight">Jadwal Pelajaran Harian</h2>
                 </div>
 
-                <div class="flex flex-wrap justify-center gap-2 mb-8 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800/80 max-w-lg mx-auto">
-                    <button @click="activeTab = 'senin'" :class="activeTab === 'senin' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Senin</button>
-                    <button @click="activeTab = 'selasa'" :class="activeTab === 'selasa' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Selasa</button>
-                    <button @click="activeTab = 'rabu'" :class="activeTab === 'rabu' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Rabu</button>
-                    <button @click="activeTab = 'kamis'" :class="activeTab === 'kamis' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Kamis</button>
-                    <button @click="activeTab = 'jumat'" :class="activeTab === 'jumat' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'" class="flex-1 py-2 px-3 rounded-xl font-semibold text-xs transition">Jumat</button>
+                <div class="flex flex-wrap justify-center gap-2 mb-8 bg-slate-900/90 p-2 rounded-2xl border border-slate-800/80 max-w-lg mx-auto">
+                    <button @click="activeTab = 'senin'" :class="activeTab === 'senin' ? 'btn-3d-indigo text-white' : 'btn-3d-slate text-slate-400 hover:text-white'" class="flex-1 py-2.5 px-3 rounded-xl font-semibold text-xs">Senin</button>
+                    <button @click="activeTab = 'selasa'" :class="activeTab === 'selasa' ? 'btn-3d-indigo text-white' : 'btn-3d-slate text-slate-400 hover:text-white'" class="flex-1 py-2.5 px-3 rounded-xl font-semibold text-xs">Selasa</button>
+                    <button @click="activeTab = 'rabu'" :class="activeTab === 'rabu' ? 'btn-3d-indigo text-white' : 'btn-3d-slate text-slate-400 hover:text-white'" class="flex-1 py-2.5 px-3 rounded-xl font-semibold text-xs">Rabu</button>
+                    <button @click="activeTab = 'kamis'" :class="activeTab === 'kamis' ? 'btn-3d-indigo text-white' : 'btn-3d-slate text-slate-400 hover:text-white'" class="flex-1 py-2.5 px-3 rounded-xl font-semibold text-xs">Kamis</button>
+                    <button @click="activeTab = 'jumat'" :class="activeTab === 'jumat' ? 'btn-3d-indigo text-white' : 'btn-3d-slate text-slate-400 hover:text-white'" class="flex-1 py-2.5 px-3 rounded-xl font-semibold text-xs">Jumat</button>
                 </div>
 
                 <div class="card-premium p-6 sm:p-8 rounded-3xl">
@@ -734,7 +756,6 @@
             </div>
         </section>
 
-        <!-- SECTION: GALERI FOTO -->
         <section id="galeri" class="py-20 bg-slate-950 border-b border-slate-800/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -781,7 +802,6 @@
             </div>
         </section>
 
-        <!-- FOOTER -->
         <footer class="bg-slate-950 border-t border-slate-800/80 py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
                 <div class="flex items-center gap-3">
@@ -799,7 +819,6 @@
             </div>
         </footer>
 
-        <!-- MODAL VERIFIKASI ADMIN (TAMPIL HANYA UTK SISWA BIASA) -->
         <div x-show="showAuthModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md" x-cloak x-transition>
             <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
                 <div class="text-center mb-5">
@@ -816,15 +835,14 @@
                         <p x-show="authError" class="text-[11px] text-rose-400 mt-1.5 font-medium"><i class="fa-solid fa-circle-exclamation mr-1"></i> Kata sandi salah!</p>
                     </div>
 
-                    <div class="flex items-center gap-2 pt-2">
-                        <button type="button" @click="showAuthModal = false" class="w-1/2 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition">Batal</button>
-                        <button type="submit" class="w-1/2 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition">Verifikasi</button>
+                    <div class="flex items-center gap-3 pt-2">
+                        <button type="button" @click="showAuthModal = false" class="w-1/2 py-2.5 rounded-xl btn-3d-slate text-slate-300 text-xs font-semibold">Batal</button>
+                        <button type="submit" class="w-1/2 py-2.5 rounded-xl btn-3d-indigo text-white text-xs font-semibold">Verifikasi</button>
                     </div>
                 </form>
             </div>
         </div>
 
-        <!-- MODAL TAMBAH PENGUMUMAN -->
         <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm" x-cloak x-transition>
             <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
                 <div class="flex items-center justify-between mb-5 border-b border-slate-800 pb-3">
@@ -873,8 +891,8 @@
                 </div>
 
                 <div class="flex items-center justify-end gap-3 mt-6 pt-4 border-t border-slate-800">
-                    <button @click="showModal = false" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">Batal</button>
-                    <button @click="addAnnouncement()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Simpan Pengumuman</button>
+                    <button @click="showModal = false" class="px-4 py-2.5 rounded-xl btn-3d-slate text-slate-300 text-xs font-semibold">Batal</button>
+                    <button @click="addAnnouncement()" class="px-4 py-2.5 rounded-xl btn-3d-indigo text-white text-xs font-semibold">Simpan Pengumuman</button>
                 </div>
             </div>
         </div>
