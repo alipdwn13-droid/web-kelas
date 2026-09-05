@@ -219,7 +219,7 @@
                     }
                 },
 
-                // Verifikasi Password Pengurus (Akses Langsung untuk Pembuat Web)
+                // Logika Keamanan: Bypass Password hanya jika role adalah Pembuat Web & Pengurus, selain itu wajib PW
                 requestAddModal() {
                     if (this.userProfile.role && this.userProfile.role.includes('Pembuat Web')) {
                         this.showModal = true;
@@ -447,13 +447,11 @@
                     </div>
 
                     <div class="hidden md:flex items-center gap-3">
-                        <!-- Perbaikan Tata Letak Waktu agar Lebih Rapi & Proporsional -->
                         <div class="px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-right flex flex-col justify-center">
                             <div class="text-xs font-bold text-indigo-400 font-mono tracking-wider leading-tight" x-text="currentTime">00:00:00 WIB</div>
                             <div class="text-[10px] text-slate-400 leading-tight mt-0.5" x-text="currentDate">-</div>
                         </div>
 
-                        <!-- Perbaikan Tata Letak Profil & Tombol Power agar Seimbang -->
                         <div class="flex items-center gap-3 bg-slate-900/90 border border-slate-800 p-1.5 pl-2.5 pr-2 rounded-xl">
                             <img :src="userProfile.avatar" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
                             <div class="text-left min-w-[90px] max-w-[130px]">
